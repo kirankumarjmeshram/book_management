@@ -2,8 +2,8 @@ const Book = require('../models/Book');
 
 exports.createBook = async (req, res) => {
   try {
-    const { title, author, publicationYear, isbn, description } = req.body;
-    const book = new Book({ title, author, publicationYear, isbn, description });
+    const { title, img, author, publicationYear, isbn, description } = req.body;
+    const book = new Book({ title,img, author, publicationYear, isbn, description });
     await book.save();
     res.status(201).json(book);
   } catch (error) {
