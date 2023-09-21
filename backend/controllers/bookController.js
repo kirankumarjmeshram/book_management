@@ -13,7 +13,7 @@ exports.createBook = async (req, res) => {
 
 exports.getAllBooks = async (req, res) => {
   try {
-    const books = await Book.find();
+    const books = await Book.find().sort({"_id":-1});
     res.json(books);
   } catch (error) {
     res.status(500).json({ error: error.message });

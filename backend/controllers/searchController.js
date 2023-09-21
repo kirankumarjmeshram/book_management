@@ -13,7 +13,7 @@ exports.searchBooks = async (req, res) => {
         query: {
           multi_match: {
             query: q,
-            fields: ['title', 'author', 'description'],
+            fields: ['title'], //, 'author', 'description'
           },
         },
       },
